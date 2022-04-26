@@ -1,0 +1,59 @@
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <title>首页</title>
+    </head>
+    <body style="background-image: url(/img/img.jpg);">
+    <div class="container" >
+        <div class="row" >
+            <div class="span12">
+                <div class="row-md">
+                    <div class="span12" style="color: rgb(129, 219, 26);  height: 50px;width: 1000px;">
+                        <h1 class="text-center">
+                            <b>留言板</b>
+                        </h1>
+                    </div>
+                </div>
+                <div class="row" style="width: 1200px;position: absolute;left: 200px;">
+                    <div class="span6" style="width: 400px;padding: 20px;">
+                        <div>
+                            <label for="exampleFormControlInput1"><b style="color: rgb(2, 3, 3);">收到的回复</b></label>
+                            <textarea class="form-control" id="exampleFormControlTextarea2" rows="20" placeholder="还未曾有人给你留过言！">${sessionScope.heMsg}</textarea>
+                        </div>
+                    </div>
+                    <div class="span6" style="width: 400px;padding: 20px;">
+                        <div>
+                            <label for="exampleFormControlInput1"><b style="color: rgb(7, 7, 7);">给卖家的留言</b></label>
+                            <textarea class="form-control" id="exampleFormControlTextarea3" rows="20" placeholder="您当前还未曾为任何人留过言！">${sessionScope.myMsg}</textarea>
+                        </div>
+                    </div>
+                    <div class="span6" style="padding: 20px;width: 400px;">
+                        <form action="http://localhost:8080/addMsg" method="post">
+                            <%--<div class="form-group">--%>
+                            <label for="exampleFormControlInput1"><b style="color: rgb(0, 0, 0);">TO</b></label>
+                            <input type="text" name="hName" class="form-control" id="exampleFormControlInput1" placeholder="输入你要留言的人的用户名">
+    
+                            <label for="exampleFormControlInput1"><b style="color: rgb(0, 0, 0);">主题</b></label>
+                            <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="你的留言主题">
+    
+                            <label for="exampleFormControlTextarea1">留言内容</label>
+                            <textarea class="form-control" name="msg" id="exampleFormControlTextarea1" placeholder="在此编写你的留言内容" rows="8"></textarea>
+                            <br><br>
+                            <button type="submit" class="btn btn-outline-primary">发布留言</button>
+                        </form>
+                        <a href="http://localhost:8080/index.jsp">
+                            <button type="button" class="btn btn-outline-success" >返回首页</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    
+    </body>
+    </html>
